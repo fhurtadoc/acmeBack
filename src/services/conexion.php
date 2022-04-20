@@ -3,7 +3,7 @@
 class Conexion{
     private $host   ="bfoz3v67dffbceoi7uh3-mysql.services.clever-cloud.com";
     private $usuario="uzkgb0sreyuz1zuk";
-    private $clave  ="uzkgb0sreyuz1zuk";
+    private $clave  ="bfoz3v67dffbceoi7uh3";
     private $db     ="bfoz3v67dffbceoi7uh3";
     public $conexion;
 
