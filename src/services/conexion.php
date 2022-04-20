@@ -1,10 +1,10 @@
 <?php
 
 class Conexion{
-    private $host   ="localhost";
-    private $usuario="codigodeplaton";
-    private $clave  ="12345";
-    private $db     ="acme";
+    private $host   ="bfoz3v67dffbceoi7uh3-mysql.services.clever-cloud.com";
+    private $usuario="uzkgb0sreyuz1zuk";
+    private $clave  ="uzkgb0sreyuz1zuk";
+    private $db     ="bfoz3v67dffbceoi7uh3";
     public $conexion;
 
     public function __construct()
