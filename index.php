@@ -25,8 +25,7 @@ if(isset($_GET['action'])){
             $user=$_POST;            
             $estado=[];
             if( 
-                !empty($user['name']) &&  
-                !empty($user['second_name']) &&  
+                !empty($user['name']) &&                  
                 !empty($user['id_card']) &&  
                 !empty($user['last_name']) &&
                 !empty($user['address']) &&
@@ -103,14 +102,15 @@ if(isset($_GET['action'])){
         
         //CRUD CAR
 
+        
+
         case 'create_car':
             $car=$_POST;            
-            $estado=[];
-            var_dump($car);
+            $estado=[];            
             if( !empty($car['license']) &&  !empty($car['brand']) &&  !empty($car['type_car']) &&  !empty($car['owner']))
             {                
-                $inserUser=$car_new->createCar($car);
-                echo $inserUser;
+                $inserCar=$car_new->createCar($car);
+                echo $inserCar;
             }else{
                 $estado=array("http"=>400, "mensaje"=>"bad_request because vars");
             }
@@ -121,6 +121,11 @@ if(isset($_GET['action'])){
 
         case 'list_typeCar':
             $list_typeCar=$car_new->list_typeCar();
+            echo json_encode($list_typeCar);            
+        break;
+
+        case 'carsoutDriver':
+            $list_typeCar=$car_new->carsoutDriver();
             echo json_encode($list_typeCar);            
         break;
 
@@ -137,12 +142,13 @@ if(isset($_GET['action'])){
         break;
 
         case 'assign_car':
-            $estado=[];
+            $estado=[];            
             $id_user=$_POST['id_user'];
             $id_car=$_POST['id_car'];
             if( !empty($id_user=$_POST['id_user']) &&  !empty($id_car=$_POST['id_car'])){
                 $assing_car=$car_new->asingCar($id_car, $id_user);
-                $estado=array("http"=>200, "mensaje"=>"creado correctamente", 'id'=>$assing_car);
+                echo $assing_car;
+                //$estado=array("http"=>200, "mensaje"=>"creado correctamente", 'id'=>$assing_car);
                 
             }else{
                 $estado=array("http"=>400, "mensaje"=>"bad_request because vars");

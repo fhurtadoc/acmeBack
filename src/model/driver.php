@@ -49,7 +49,16 @@
 
         public function list_drivers_outcars($rol){
             $db= Singleton::getConnect();
-            $sql="";
+            $sql="SELECT * from users u 
+            INNER join drivers d on u.id <> d.id_user 
+            WHERE rol=1";
+            $res=$db->getArray($sql);
+            if($res){                   
+                return $res;
+            }else{
+                return $res;
+            }
+
         }
     }
 

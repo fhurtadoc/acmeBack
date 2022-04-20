@@ -62,10 +62,22 @@ class Car {
             return $res;
         }
     }
+
+    public function carsoutDriver(){
+        $db= Singleton::getConnect();
+        $sql="SELECT c.id, c.license, c.brand  from cars c  
+        INNER join drivers d on c.id <>d.id_car";
+        $res=$db->getArray($sql);
+        if($res){                   
+            return $res;
+        }else{
+            return "error ejecucion";
+        }
+    }
     
     public function asingCar($id_car, $id_user){
         $db= Singleton::getConnect();
-        $sql="INSERT into drivers (id_user, id_car) values ($id_car, $id_user)";
+        $sql="INSERT into drivers (id_user, id_car) values ($id_car, $id_user)";        
         $res=$db->query($sql);
         if($res){                   
             return $res;
