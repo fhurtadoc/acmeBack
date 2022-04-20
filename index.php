@@ -3,6 +3,7 @@ include_once('./src/model/car.php');
 include_once('./src/model/driver.php');
 include_once('./src/model/owners.php');
 
+cors();
 
 function cors() {
     
