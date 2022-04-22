@@ -14,8 +14,9 @@ class Car {
         $license=$car['license'];
         $brand=$car['brand'];
         $type_car=$car['type_car'];
-        $sql="INSERT INTO cars (license, brand, type_car )
-        VALUES ( '$license', '$brand', $type_car)";
+        $owner=$car['owner'];
+        $sql="INSERT INTO cars (license, brand, type_car, owner)
+        VALUES ( '$license', '$brand', $type_car, $owner)";
         $res=$db->query($sql);
         if($res){                   
             return $res;
