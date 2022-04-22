@@ -1,10 +1,10 @@
 <?php
 
 class Conexion{
-    private $host   ="bfoz3v67dffbceoi7uh3-mysql.services.clever-cloud.com";
-    private $usuario="uzkgb0sreyuz1zuk";
-    private $clave  ="bfoz3v67dffbceoi7uh3";
-    private $db     ="bfoz3v67dffbceoi7uh3";
+    private $host   ="bwoxoohyve5xvcagbqu7-mysql.services.clever-cloud.com";
+    private $usuario="uj243zlxdbpx69ow";
+    private $clave  ="CpMvdN9wcSgpkEi54QpD";
+    private $db     ="bwoxoohyve5xvcagbqu7";
     public $conexion;
 
     public function __construct()
