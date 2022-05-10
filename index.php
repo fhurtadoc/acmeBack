@@ -96,7 +96,7 @@ if(isset($_GET['action'])){
         case 'list_owner':
             $rol=2;
             $list_drivers=$owner_new->listAll_user($rol);
-            echo json_encode($list_typeCar);
+            echo json_encode($list_drivers);
         break;
     
         
@@ -110,7 +110,8 @@ if(isset($_GET['action'])){
             if( !empty($car['license']) &&  !empty($car['brand']) &&  !empty($car['type_car']) &&  !empty($car['owner']))
             {                
                 $inserCar=$car_new->createCar($car);
-                echo $inserCar;
+                $estado=array("http"=>200, "mensaje"=>"creado correctamente", 'id'=>$inserCar);
+                //echo $inserCar;
             }else{
                 $estado=array("http"=>400, "mensaje"=>"bad_request because vars");
             }
@@ -147,8 +148,8 @@ if(isset($_GET['action'])){
             $id_car=$_POST['id_car'];
             if( !empty($id_user=$_POST['id_user']) &&  !empty($id_car=$_POST['id_car'])){
                 $assing_car=$car_new->asingCar($id_car, $id_user);
-                echo $assing_car;
-                //$estado=array("http"=>200, "mensaje"=>"creado correctamente", 'id'=>$assing_car);
+                //echo $assing_car;
+                $estado=array("http"=>200, "mensaje"=>"creado correctamente", 'id'=>$assing_car);
                 
             }else{
                 $estado=array("http"=>400, "mensaje"=>"bad_request because vars");
